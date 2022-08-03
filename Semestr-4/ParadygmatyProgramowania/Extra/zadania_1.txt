@@ -1,0 +1,58 @@
+z1
+F#: Napisz funkcję, która przyjmie parę liczb i określi, która z nich jest większa po podniesieniu do kwadratu np. wywołanie wieksza (-5, 4) powinno zwrócić -5.
+
+z2
+F#: Napisz program, który utworzy listę 100 dwuwymiarowych punktów losowych z przedziału od -20 do 20. Następnie napisz program, który podzieli te punkty na dwie grupy. Pierwsza powinna zawierać punkty wewnątrz okręgu o r=5 i środku w początku układu współrzędnych, a druga na zewnątrz tego okręgu. Wykorzystaj funkcje modułu List.
+
+z3
+C#: Napisz funkcję wczytującą od użytkownika kolejne liczby całkowite i zwracała je w formie leniwej kolekcji. Następnie napisz funkcję, która pozwoli na przekazanie tylko takich wartości, które będą spełniały określony warunek. Warunek przekaż jako parametr funkcji. Przykładowo:
+
+WczytajLiczby().Tylko(x=>x>0).
+
+W funkcji main zademonstruj działanie tego kodu
+
+z4
+C#: Stwórz klasy na podstawie przykładów:
+
+var ksiazki = new [] {
+
+new Ksiazka {Tytul = "Pan Tadeusz", RokWydania = 1998, Autor = 1, Cena = 30},
+
+new Ksiazka {Tytul = "Potop", RokWydania = 1991, Autor = 2, Cena = 40},
+
+new Ksiazka {Tytul = "W pustyni i w puszczy", RokWydania = 1990, Autor = 2, Cena = 30},
+
+new Ksiazka {Tytul = "Lalka", RokWydania = 1990, Autor = 3, Cena = 50},
+
+new Ksiazka {Tytul = "Programowanie funkcyjne w języku C#", RokWydania = 2019, Autor = 4, Cena = 71.20},
+
+new Ksiazka {Tytul = "Programowanie funkcyjne z JavaScriptem", RokWydania = 2017, Autor = 5, Cena = 29.40},
+
+};
+
+var autorzy = new [] {
+
+new Autor { id = 1, Imie = "Adam", Nazwisko = "Mickiewicz" },
+
+new Autor { id = 2, Imie = "Henryk", Nazwisko = "Sienkiewicz" },
+
+new Autor { id = 3, Imie = "Bolesław", Nazwisko = "Prus" },
+
+new Autor { id = 4, Imie = "Enrico", Nazwisko = "Buonanno" },
+
+new Autor { id = 5, Imie = "Luis", Nazwisko = "Atencio" }
+
+new Autor { id = 6, Imie = "Robert C.", Nazwisko = "Martin" },
+
+};
+
+
+
+Napisz zapytanie Linq, które dla autora określi cenę najtańszej książki, którą napisał. Jeżeli autor nie napisał książek zapytanie powinno zwrócić 0.
+
+z5
+C#: Napisz funkcję wczytującą od użytkownika kolejne liczby całkowite i zwracała je w formie leniwej kolekcji. Następnie napisz funkcję, która pozwoli na przekazanie tylko takich wartości, które będą spełniały określony warunek. Warunek przekaż jako parametr funkcji. Przykładowo:
+
+WczytajLiczby().Tylko(x=>x>0).
+
+W funkcji main zademonstruj działanie tego kodu

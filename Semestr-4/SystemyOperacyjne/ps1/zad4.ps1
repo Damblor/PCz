@@ -1,0 +1,1 @@
+Get-ChildItem | Sort-Object -Property Mode | Out-GridView
