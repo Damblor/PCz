@@ -1,0 +1,20 @@
+Invoice. id_customer 1
+Anna Nowak  ul. Jasna 21 44-244 Katowice
+number trans. 7, sum amount 875.95 PLN
+----------------------------------
+Invoice. id_customer 2
+Ewa Michalska  al. Jana Pawla II 32/12 42-216 Czestochowa
+number trans. 4, sum amount 865.5 PLN
+----------------------------------
+Invoice. id_customer 3
+Jan Kowalski  ul. Konawaliowa 13 44-270 Katowice
+number trans. 3, sum amount 903.5 PLN
+----------------------------------
+Invoice. id_customer 4
+Roksana Piech  ul. Kolejowa 142 92-700 Olsztyn
+number trans. 5, sum amount 636.5 PLN
+----------------------------------
+Invoice. id_customer 6
+Andrzej Zamojski  ul. Jasna 1 00-902 Warszawa
+number trans. 3, sum amount 1731.0 PLN
+----------------------------------

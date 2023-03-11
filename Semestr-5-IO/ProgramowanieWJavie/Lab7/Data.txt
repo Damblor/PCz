@@ -1,0 +1,6 @@
+Maj Jan 0,5 7000,0 52 Kierownik
+Bąk Olga 1,0 6000,0 29 Księgowa
+Piech Anna 0,7 4800,0 29 Księgowa
+Jach Ewa 1,2 6000,0 27 Księgowa
+Nowak Jan 1,0 5200,0 24 Kierowca
+Rak Piotr 1,25 4000,0 21 Kierowca

@@ -1,0 +1,2 @@
+101 Ewa Kowalska starszy_kucharz 6500.0 150 10 2010 1 1 2500
+201 Jacek Chmiel kierownik_hotelu 8500.0 150 20 2006 3 1 4500

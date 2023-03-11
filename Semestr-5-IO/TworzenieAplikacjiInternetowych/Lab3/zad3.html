@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            li {
+                background-color: coral;
+                margin: 6px;
+            }
+            li:hover {
+                background-color: aqua;
+                color: darkgreen;
+                transition: 2s;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <div>
+                <ol id="lista">
+                    <li onclick="Delete(this)">
+                        Element 1
+                    </li>
+                    <li onclick="Delete(this)">
+                        Element 2
+                    </li>
+                </ol>
+            </div>
+            <div>
+                <input type="text" id="liczba">
+                <button onclick="Add()">Add</button>
+                <button onclick="AddRandom()">Add Random</button>
+            </div>
+        </div>
+        <script>
+            function Add()
+            {
+                let text = document.getElementById("liczba").value;
+                let lista = document.getElementById("lista");
+                lista.innerHTML += "<li onclick=\"Delete(this)\">" + text + "</li>";
+            }
+
+            function AddRandom()
+            {
+                let lista = document.getElementById("lista");
+                lista.innerHTML += "<li onclick=\"Delete(this)\">" + Math.random() + "</li>";
+            }
+
+            function Delete(ele)
+            {
+                let lista = document.getElementById("lista");
+                lista.removeChild(ele);
+            }
+        </script>
+    </body>
+</html>

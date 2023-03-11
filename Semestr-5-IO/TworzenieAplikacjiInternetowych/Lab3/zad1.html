@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <p id="min"></p>
+        <p id="max"></p>
+        <p id="suma"></p>
+        <script>
+            function Sum(t)
+            {
+                let s = 0;
+                for(let i = 0; i < t.length; i++)
+                {
+                    s+=t[i];
+                }
+                return s;
+            }
+            let tab = [5,7,21,11,9,19,13];
+            let minh = document.getElementById("min");
+            let maxh = document.getElementById("max");
+            let sumah = document.getElementById("suma");
+            sumah.innerHTML = "Suma: " + Sum(tab);
+            min = tab[0];
+            max = tab[0];
+            for(let i = 1; i < tab.length; i++)
+            {
+                if(min > tab[i]) min = tab[i];
+                if(max < tab[i]) max = tab[i];
+            }
+            minh.innerHTML = "Min: " + min;
+            maxh.innerHTML = "Max : " + max;
+        </script>
+    </body>
+</html>

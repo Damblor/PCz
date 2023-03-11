@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        .kosc {
+            background: silver;
+            border: 1px solid black;
+            width: 50px;
+            height: 50px;
+            vertical-align: middle;
+            text-align: center;
+            font-size: 40px;
+            margin: 10px;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <button onclick="Create()">Stworz</button>
+        <button onclick="Replace()">Wymien</button>
+        <span id="info">0</span>
+        <div id="game"></div>
+    </div>
+    <script>
+        let rep = 0;
+        function Create()
+        {
+            let game = document.getElementById("game");
+            game.innerHTML = "";
+            let div = document.createElement("div");
+            div.setAttribute("id", "kosci");
+            for (let i = 0; i < 5; i++)
+            {
+                let d = document.createElement("div");
+                d.setAttribute("class", "kosc");
+                let losowa = 1 + Math.floor(Math.random() * 6);
+                d.innerHTML = losowa;
+                d.setAttribute("onclick", "Remove(this)");
+                div.appendChild(d);
+            }
+            game.appendChild(div);
+            let info = document.getElementById("info");
+            rep = 0;
+            info.innerHTML = rep;
+        }
+
+        function Remove(element)
+        {
+            element.parentNode.removeChild(element);
+            let info = document.getElementById("info");
+            rep += 1;
+            info.innerHTML = rep;
+        }
+
+        function Replace()
+        {
+            let kosci = document.getElementById("kosci");
+            for (let i = 0; i < rep; i++)
+            {
+                let d = document.createElement("div");
+                d.setAttribute("class", "kosc");
+                let losowa = 1 + Math.floor(Math.random() * 6);
+                d.innerHTML = losowa;
+                d.setAttribute("onclick", "Remove(this)");
+                kosci.appendChild(d);
+            }
+            let info = document.getElementById("info");
+            rep = 0;
+            info.innerHTML = rep;
+        }
+    </script>
+</body>
+
+</html>

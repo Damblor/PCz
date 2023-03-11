@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="chart.js"></script>
+</head>
+
+<body>
+    <div style="width: 600px; height: 600px; background-color: #ffaaff;">
+        <canvas id="wykres" width="600" height="400"></canvas>
+    </div>
+    <script>
+        const dane = {
+            labels: ["18-24", "25-34", "35-44", "45-54", "55-64", "65+"],
+            datasets: [
+                {
+                    label: "2020",
+                    data: [8280, 17965, 31335, 39511, 34626, 26399],
+                    backgroundColor: ["#ff00005f", "#00ff005f", "#0000ff5f", "#ff00ff5f", "#ffff005f", "#00ffff5f"]
+                }
+            ]
+        }
+
+        const opcje = {
+            indexAxis: "y",
+            scales: {
+                y: {
+                    title: {
+                        display: true,
+                        text: "Grupa wiekowa"
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: "Zaległość (zł)"
+                    }
+                }
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: "Przeciętna zaległość w różnych grupach wiekowych"
+                },
+                legend: { position: "right" }
+            }
+        }
+        const ctx = document.getElementById("wykres").getContext("2d");
+        const wykres = new Chart(ctx, { type: "pie", data: dane, options: opcje });
+    </script>
+</body>
+
+</html>

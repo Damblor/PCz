@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="chart.min.js"></script>
+</head>
+<body>
+    <div style="width: 600px; height: 600px; background-color: #979297;">
+        <canvas id="wykres" width="600" height="400"></canvas>
+    </div>
+    <button onclick="getMinMax()">GetMinMax</button>
+    <span id="minmax"></span>
+    <script>
+        dane = {
+            datasets: [
+                {
+                    label: "punkty",
+                    data: [ { x: 1, y: 0, r: 10 }, { x: 0, y: 1, r: 5 }, { x: 0, y: 0, r: 3 }],
+                    backgroundColor: "#f0ff00",
+                    showLine: true,
+                    borderColor: "#00fff0"
+                }
+            ]
+        }
+        const ctx = document.getElementById('wykres').getContext('2d');
+        const wykres = new Chart(ctx, { type: 'bubble', data: dane});
+
+        function addData()
+        {
+            wykres.data.datasets[0].data.push({x: (Math.random() * (10 + 10) - 10), y: (Math.random() * (10 + 10) - 10), r: (Math.random() * 5 + 1)})
+            wykres.update();
+        }
+
+        function getMinMax()
+        {
+            let xmin = 11;
+            let xmax = -11;
+            let ymin = 11;
+            let ymax = -11;
+            let d = wykres.data.datasets[0].data;
+            for(let i = 0; i < d.length; i++)
+            {
+                if(d[i].x > xmax)
+                    xmax = d[i].x
+                if(d[i].x < xmin)
+                    xmin = d[i].x
+                if(d[i].y > ymax)
+                    ymax = d[i].y
+                if(d[i].y < ymin)
+                    ymin = d[i].y
+            }
+            document.getElementById("minmax").innerHTML = "Xmax: " + xmax + " Xmin: " + xmin +" Ymax: " + ymax +" Ymin: " + ymin; 
+        }
+
+        setInterval(addData, 1000);
+    </script>
+</body>
+</html>
