@@ -1,0 +1,7 @@
+DEF123 Ford Engine_3 8.5 160.0 Piotr Derda 2018 56.0
+EFG123 BMW Engine_1 11.0 220.0 Jan Kowalski 2020 21.0
+FGH123 Audi Engine_2 9.4 210.0 Anna Nowak 2020 17.0
+GHI123 Ford Engine_4 7.2 172.0 Anna Derda 2019 42.0
+HIJ123 Ford Engine_1 11.0 220.0 Jan Czech 2015 120.0
+IJK123 BMW Engine_3 8.5 160.0 Jan Kowalski 2014 160.0
+JKL123 Ford Engine_2 9.4 210.0 Anna Nowak 2022 5.0

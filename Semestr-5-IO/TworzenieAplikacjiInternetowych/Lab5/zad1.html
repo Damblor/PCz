@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <table id="dane"></table>
+    </div>
+    <script>
+        class Osoba {
+            constructor(imie, nazwisko, rokurodzenia) {
+                this.imie = imie;
+                this.nazwisko = nazwisko;
+                this.rokurodzenia = rokurodzenia;
+            }
+            wypiszInformacje() {
+                console.log(this.imie, this.nazwisko, this.rokurodzenia)
+            }
+        }
+
+        class Pracownik extends Osoba {
+            constructor(imie, nazwisko, rokurodzenia, pensja, premia)
+            {
+                super(imie, nazwisko, rokurodzenia);
+                this.pensja = pensja;
+                this.premia = premia;
+            }
+
+            wypiszInformacje() {
+                super.wypiszInformacje();
+                console.log(this.pensja, this.premia)
+            }
+
+            getDOM() {
+                let tr = document.createElement("tr");
+                let td1 = document.createElement("td");
+                td1.innerHTML = this.imie + " " + this.nazwisko[0];
+                let td2 = document.createElement("td");
+                td2.innerHTML = this.pensja;
+                let td3 = document.createElement("td");
+                td3.innerHTML = this.premia;
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+                return tr;
+            }
+        }
+
+        let osoby = [
+            new Osoba("Jan","Kowalski", 1992),
+            new Osoba("Bogdan","Mak", 1987),
+            new Osoba("Krystyna","Opal", 2003),
+            new Osoba("Anna","Baum", 2014)
+        ];
+        osoby.forEach(o => o.wypiszInformacje())
+
+        let pracownicy = [
+            new Pracownik("Jakub","Nowak",1978,2000,200),
+            new Pracownik("Adrian","Kosiniak",1982,17000,4000),
+            new Pracownik("Magdalena","Buk",1993,4157,370),
+            new Pracownik("Kamila","Zając",1995,8700,750),
+            new Pracownik("Genowefa","Małysz",2000,6540,340)
+        ];
+        let table = document.getElementById("dane");
+
+        pracownicy.forEach(p => table.appendChild(p.getDOM()))
+    </script>
+</body>
+
+</html>

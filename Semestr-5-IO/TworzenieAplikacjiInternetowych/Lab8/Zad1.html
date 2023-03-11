@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FLAPPY</title>
+    <script src="p5.min.js" defer></script>
+    <style>
+        #score {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: gray;
+            font-size: 32px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <span id="score">Score:</span>
+    <main></main>
+    <script>
+        // stałe
+        const WIDTH = 640 // screen resx
+        const HEIGHT = 480 // screen resy
+        const FLW = 30 // flappy width
+        const FLH = 20 // flappy height
+        const PPW = 30 // pipe radious
+        const ZSP = -100 // z-bufor offset
+        // flappy class
+        class Flappy {
+            // flappy constructor
+            constructor() {
+                this.x = -WIDTH / 2 // x position
+                this.y = -HEIGHT / 4 // y position
+                this.a = 0.0 // acceleration
+                this.v = 0.0 // velocity
+                this.j = 0.0 // jump power
+            }
+            // uaktualnienie pozycji
+            process() {
+                this.a = 0.10 // acceleration
+                this.v += this.a - this.j // velocity
+                this.y += this.v // position
+                if (this.v > 13.0) this.v = 13.0 // max down speed
+                if (this.v < -13.0) this.v = -13.0 // max up speed
+                if (this.j > 0.0) this.j -= 0.4 // jump power decrease
+            }
+            // ustawienie siły skoku
+            jump() {
+                this.j = 3.0
+                this.v /= 2.0
+            }
+            // sprawdzenie kolizji
+            collision(pipe) {
+                // brak kolizji po x
+                if (Math.abs(this.x - pipe.x) > (FLW + PPW)) {
+                    return false
+                }
+                // kolizja po y
+                let pipes = 2 * pipe.y - pipe.h
+                let pipee = 2 * pipe.y + pipe.h
+                if ((this.y > pipes) && (this.y < pipee)) {
+                    return true
+                }
+                // brak kolizji po y
+                return false
+            }
+            // narysowanie obiektu
+            draw() {
+                push()
+                normalMaterial()
+                scale(1.0, 0.5, 1.0)
+                translate(this.x, this.y, ZSP)
+                rotateX(frameCount * 0.1)
+                cylinder(FLW, FLH)
+                //model(bird)
+                pop()
+            }
+        }
+        class Pipe {
+            // pipe constructor
+            constructor(start, end, x) {
+                this.x = x;
+                this.h = (end - start) * HEIGHT * 1.5
+                this.y = -HEIGHT * 1.5 / 2 + start * HEIGHT * 1.5 + this.h / 2
+            }
+            // uaktualnienie pozycji
+            process(time) {
+                this.x -= 2 + time / 10
+            }
+            // narysowanie obiektu
+            draw() {
+                push()
+                noStroke()
+                ambientMaterial(10, 230, 50)
+                translate(this.x, this.y, ZSP)
+                cylinder(PPW, this.h)
+                pop()
+            }
+            //
+            czyPoza(){
+                if(this.x < (-WIDTH/2 - 120)){
+                    if(canGetScore){
+                        showScore(1)
+                    }
+                    else{
+                        canGetScore = true;
+                    }
+                    return true;
+                }
+                return false;
+            }
+        }
+        // zmienne globalne (rysowane obiekty)
+        let objects = [
+            new Flappy(),
+            new Pipe(0.00, 0.25, WIDTH / 2),
+            new Pipe(0.75, 1.00, WIDTH / 2),
+            new Pipe(0.00, 0.40, 0),
+            new Pipe(0.80, 1.00, 0)
+            ]
+        // Score
+        let score = 0;
+        let canGetScore = true;
+        let startTime = Date.now() / 1000;
+        // p5.js setup
+        function setup() {
+            createCanvas(WIDTH, HEIGHT, WEBGL)
+        }
+        // funkcja rysująca
+        function draw() {
+            // czas gry
+            let time = Date.now() / 1000 - startTime
+            // tło i światła
+            background(190, 210, 230)
+            ambientLight(60, 60, 60)
+            pointLight(255, 255, 255, 0, 0, 100)
+            // sprawdzenie kolizji
+            for (let i = 1; i < objects.length; i++) {
+                if (objects[0].collision(objects[i])) {
+                    background(80, 0, 0)
+                    showScore(-score)
+                    canGetScore = false;
+                }
+            }
+            // elementy gry
+            for (let i = 0; i < objects.length; i++) {
+                objects[i].process(time)
+                objects[i].draw()
+            }
+            // Sprawdzenie pozycji pipe i ewentualna zamiana na nowe
+            for (let i = 1; i < objects.length; i++) {
+                if (objects[i].czyPoza()) {
+                    let pipes = createPipes(time);
+                    objects[i] = pipes[0];
+                    objects[i + 1] = pipes[1];
+                    i++;
+                }
+            }
+        }
+        // key press event
+        function keyPressed() {
+            objects[0].jump()
+        }
+        // mouse click event
+        function mouseClicked() {
+            objects[0].jump()
+        }
+        // show score
+        function showScore(s) {
+            score += s
+            document.getElementById("score").innerHTML = "Score: " + score;
+        }
+        // create down pipe
+        function createDownPipe() {
+            let h = Math.random() * 0.6;
+            return new Pipe(0.00, h, WIDTH / 2)
+        }
+        // create up pipe
+        function createUpPipe() {
+            let h = Math.random() * 0.6;
+            return new Pipe(h + 0.4, 1.00, WIDTH / 2)
+        }
+        // create pipes
+        function createPipes(time) {
+            h = Math.random() * 0.6;
+            hu = h + 0.4 / (time / 20 + 1);
+            let down = new Pipe(0.00, h , WIDTH / 2);
+            let up = new Pipe(hu, 1.00, WIDTH / 2);
+            return [down, up]
+        }
+    </script>
+</body>
+
+</html>

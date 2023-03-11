@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div>
+            <div>
+                <input type="text" id="liczba1" onkeyup="runLastFunction()">
+                <input type="text" id="liczba2" onkeyup="runLastFunction()">
+            </div>
+            <div>
+                <button onclick="dodaj()">Dodawanie</button>
+                <button onclick="odejmij()">Odejmowanie</button>
+                <button onclick="pomnoz()">Mnożenie</button>
+                <button onclick="podziel()">Dzielenie</button>
+            </div>
+            <div>
+                <p id="result">Wynik =</p>
+            </div>
+        </div>
+        <script>
+            let lastFunction = function(){}
+            function runLastFunction()
+            {
+                lastFunction();
+            }
+
+            function dodaj()
+            {
+                let l1 = document.getElementById("liczba1").value;
+                let l2 = document.getElementById("liczba2").value;
+                l1 = parseFloat(l1);
+                l2 = parseFloat(l2);
+                let r = l1 + l2;
+                let w = document.getElementById("result");
+                w.innerHTML = "Wynik = " + r;
+                lastFunction = dodaj;
+            }
+            function odejmij()
+            {
+                let l1 = document.getElementById("liczba1").value;
+                let l2 = document.getElementById("liczba2").value;
+                l1 = parseFloat(l1);
+                l2 = parseFloat(l2);
+                let r = l1 - l2;
+                let w = document.getElementById("result");
+                w.innerHTML = "Wynik = " + r;
+                lastFunction = odejmij;
+            }
+            function pomnoz()
+            {
+                let l1 = document.getElementById("liczba1").value;
+                let l2 = document.getElementById("liczba2").value;
+                l1 = parseFloat(l1);
+                l2 = parseFloat(l2);
+                let r = l1 * l2;
+                let w = document.getElementById("result");
+                w.innerHTML = "Wynik = " + r;
+                lastFunction = pomnoz;
+            }
+            function podziel()
+            {
+                let l1 = document.getElementById("liczba1").value;
+                let l2 = document.getElementById("liczba2").value;
+                l1 = parseFloat(l1);
+                l2 = parseFloat(l2);
+                let r = l1 / l2;
+                let w = document.getElementById("result");
+                w.innerHTML = "Wynik = " + r;
+                lastFunction = podziel;
+            }
+        </script>
+    </body>
+</html>

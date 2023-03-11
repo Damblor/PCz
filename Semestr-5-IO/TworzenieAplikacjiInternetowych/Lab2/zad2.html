@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            table {
+                border-collapse: collapse;
+                border: 1px solid silver;
+            }
+
+            tr:nth-child(even) {
+                background-color: chocolate;
+            }
+
+            tr:nth-child(odd) {
+                background-color: brown;
+            }
+
+            tr:hover {
+                background-color: aquamarine;
+                color: tomato;
+            }
+
+            tr {
+                transition: 2s;
+            }
+
+            .firstrow th, .firstrow td {
+                color: blueviolet;
+                background-color: cornsilk;
+            }
+
+            
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr class="firstrow">
+                <th>Lorem</th>
+                <td>ipsum</td>
+            </tr>
+            <tr>
+                <th>dolor</th>
+                <td>sit</td>
+            </tr>
+            <tr>
+                <th>amet</th>
+                <td>consectetur</td>
+            </tr>
+            <tr>
+                <th>adipiscing</th>
+                <td>elit</td>
+            </tr>
+            <tr>
+                <th>sed</th>
+                <td>do</td>
+            </tr>
+        </table>
+    </body>
+</html>

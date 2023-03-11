@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="p5.min.js"></script>
+</head>
+<body>
+    <main>
+        <button onclick="changeShape(1)">Sześcian</button>
+        <button onclick="changeShape(2)">Sfera</button>
+        <button onclick="changeShape(3)">Stożek</button>
+    </main>
+    <script>
+        function setup() {
+            createCanvas(640, 480, WEBGL);
+        }
+        let kat = 0.0; // obiekt będzie animowany
+        let object = 1;
+        function draw() {
+            background("#0000aa");
+            
+            rotateY(kat);
+            rotateZ(kat);
+            
+            fill("#ffaaff");
+            stroke("#aaff00");
+            pointLight(255, 0 , 0 , 100, 50, 200);
+            pointLight(0, 255 , 0 , -100, 50, 200);
+            if(object == 1)
+                box();
+            else if(object == 2)
+                sphere();
+            else 
+                cone();
+            
+            kat += 0.01; // zwiększenie kąta obrotu
+            orbitControl();
+        }
+
+        function changeShape(n)
+        {
+            object = n;
+        }
+    </script>
+</body>
+</html>

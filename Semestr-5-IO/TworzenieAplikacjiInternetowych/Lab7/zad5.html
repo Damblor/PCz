@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="p5.min.js"></script>
+</head>
+
+<body>
+    <main></main>
+    <script>
+        function setup() {
+            createCanvas(640, 480, WEBGL);
+        }
+        let kat = 0.0; // obiekt będzie animowany
+        function draw() {
+            background(200);
+            for (let i = 0; i < 5; i++) {
+                for (let j = 0; j < 5; j++) { // narysowanie 10 sfer
+                    translate(-200 + (j * 100), -200 + (i * 100), 0); // i przesunięta dalej po osi Y
+                    rotateX(kat)
+                    if (j == 2) rotateZ(kat);
+                    box();
+                    if (j == 2) rotateZ(-kat);
+                    rotateX(-kat)
+                    translate(-(-200 + (j * 100)), -(-200 + (i * 100)), 0); // i przesunięta dalej po osi Y
+                }
+            }
+            kat += 0.01; // zwiększenie kąta obrotu
+            orbitControl();
+        }
+    </script>
+</body>
+
+</html>

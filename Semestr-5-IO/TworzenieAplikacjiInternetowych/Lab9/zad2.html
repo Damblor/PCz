@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="chart.js"></script>
+</head>
+
+<body>
+    <div style="width: 600px; height: 600px;">
+        <canvas id="wykres" width="600" height="400"></canvas>
+    </div>
+    <input type="text" id="x" placeholder="x">
+    <input type="text" id="y" placeholder="y">
+    <button onclick="dodaj()">Dodaj</button>
+    <button onclick="usun()">Usuń</button>
+    <input type="text" id="index" placeholder="index">
+    <button onclick="usunWybrany(document.getElementById('index').value)">Usuń wybrany</button>
+    <script>
+        const dane = {
+            datasets: [
+                {
+                    label: "punkty",
+                    data: [
+                        { x: 0, y: 0 },
+                        { x: 1, y: 0 },
+                        { x: 1, y: 1 },
+                    ],
+                    backgroundColor: ["violet"],
+                    pointRadius: 10,
+                    showLine: true,
+                    borderColor: "blue",
+                }
+            ]
+        }
+
+        function dodaj() {
+            const x = document.getElementById("x").value;
+            const y = document.getElementById("y").value;
+            dane.datasets[0].data.push({ x: x, y: y });
+            wykres.update();
+        }
+
+        function usun() {
+            console.log(dane);
+            dane.datasets[0].data.shift();
+            console.log(dane);
+            wykres.update();
+        }
+
+        function usunWybrany(index)
+        {
+            dane.datasets[0].data.splice(index, 1);
+            wykres.update();
+        }
+
+        
+        const ctx = document.getElementById("wykres").getContext("2d");
+        const wykres = new Chart(ctx, { type: "scatter", data: dane });
+    </script>
+</body>
+
+</html>

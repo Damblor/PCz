@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="p5.min.js"></script>
+</head>
+<body>
+    <main>
+        <button onclick="move(2)">Lewo</button>
+        <button onclick="move(1)">Prawo</button>
+    </main>
+    <script>
+        function setup() {
+            createCanvas(640, 480, WEBGL);
+        }
+        let direction = 0;
+        let kat = 0.0;
+        function draw() {
+            background("#0000aa");
+            
+            push();
+
+            translate(direction, 0);
+
+            rotateY(kat);
+            rotateZ(kat);
+            
+            fill("#ffaaff");
+            stroke("#000000");
+            torus();
+
+            pop();
+            
+            kat += 0.01;
+            orbitControl();
+        }
+
+        function move(dir)
+        {
+            if(dir == 1)
+            {
+                direction += 20;
+            }
+            else if(dir == 2)
+            {
+                direction -= 20;
+            }
+        }
+
+    </script>
+</body>
+</html>

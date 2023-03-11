@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kolokwium 1</title>
+    <style>
+        div {
+            background-color: bisque;
+            margin: 5px;
+            padding: 5px;
+            width: 200px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            display: inline-block;
+        }
+
+        #wynik {
+            position: fixed;
+            margin-top: 20px;
+        }
+
+        #colInput {
+            transition: 2s;
+        }
+        #colInput:hover {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body id="b">
+    <div id="str">
+        <strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the <ins>industry's standard dummy</ins> text ever since the <strong>1500s</strong>, 
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        It has <ins>survived not only five centuries</ins>, but also the leap into electronic typesetting, remaining essentially unchanged.
+    </div>
+    <table id="tb">
+        <tr>
+            <td><button onclick="AddTr()">Button1</button></td>
+            <td><button onclick="AddRandomToTable()">Button2</button></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <div id="wynik">
+        wynik
+    </div>
+    <input id="colInput" type="text">
+    <input id="pColor" type="text" onkeyup="PageColor()">
+    <script>
+        function PageColor() {
+            let bg = document.getElementById("b");
+            let color = document.getElementById("pColor").value;
+            console.log(color)
+            if(color == "zielony")
+                b.style.background = "rgb(0,255,0)";
+            else
+            b.style.background = "rgb(255,255,255)";
+        }
+
+        function RemoveStrong() {
+            let d = document.getElementById("str");
+            let strongs = document.querySelectorAll("#str strong");
+            for (let i = 0; i < strongs.length; i++)
+            {
+                d.removeChild(strongs[i]);
+            }
+            
+        }
+
+        function AddTr() {
+            let table = document.getElementById("tb").children;
+            table[0].innerHTML += "<tr><td></td><td></td><td></td></tr>"
+        }
+        
+        function AddRandomToTable() {
+            let cells = document.querySelectorAll("#tb tr td");
+            let full = 2;
+
+
+            while(true) {
+                let r = Math.floor(Math.random() * (cells.length));
+                if(cells[r].innerHTML.length == 0)
+                {
+                    cells[r].innerHTML = Math.random() * 10;
+                    full++;
+                    break;
+                }
+                else
+                    continue;
+            }
+            
+
+        }
+        RemoveStrong();
+    </script>
+</body>
+</html>

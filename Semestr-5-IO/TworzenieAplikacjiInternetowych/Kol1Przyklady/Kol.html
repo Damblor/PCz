@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <title>Kolokwium</title>
+        <style>
+            #tb {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+
+            #firstRow td, #firstRow th {
+                background-color: aqua;
+            }
+
+            tr {
+                height: 50px;
+            }
+
+            div a {
+                color: red;
+                background-color: blue;
+            }
+
+            div {
+                margin: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <table id="tb">
+            <tr id="firstRow">
+                <td>
+                    <a href="https://lttstore.com">lttstore</a>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <a href="https://lttstore.com">lttstore</a>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <a href="https://lttstore.com">lttstore</a>
+                </td>
+                <td>
+                    <a href="https://lttstore.com">lttstore</a>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>
+                    <a href="https://lttstore.com">lttstore</a>
+                </td>
+            </tr>
+        </table>
+        <div>
+            <a href="https://lttstore.com">lttstore</a>
+            <a href="https://lttstore.com">lttstore</a>
+            <a href="https://lttstore.com">lttstore</a>
+            <a href="https://lttstore.com">lttstore</a>
+        </div>
+        <input id="p1" type="text" onkeyup="GetData(this)">
+        <div id="info">a</div>
+        <button onclick="Check()">Sprawdz</button>
+        <button onclick="Calculate()">Oblicz</button>
+        <div id="pola">
+
+        </div>
+        <script>
+            function GetData(ob)
+            {
+                document.getElementById("info").innerHTML = ob.value;
+            }
+
+            function Check()
+            {
+                let v = document.getElementById("p1").value;
+                v = Number(v);
+                let pola = document.getElementById("pola");
+                pola.innerHTML = "";
+                if(v > 0 && v <= 10)
+                {
+
+                    for (let i = 0; i < v; i++)
+                    {
+                        pola.innerHTML += "<input type=\"text\">";
+                    }
+                }
+            }
+
+            function Calculate()
+            {
+                let sum = 0;
+                let pola = document.getElementById("pola").children;
+                for (let i = 0; i < pola.length; i++)
+                {
+                    let v = pola[i].value;
+                    v = Number(v);
+                    sum += v;
+                }
+                alert(sum);
+            }
+
+            function Populate()
+            {
+                let cells = document.querySelectorAll("#tb tr td").forEach(c => {
+                    if(c.innerHTML.length == 0)
+                        c.innerHTML = Math.random() * 10;
+                })
+            }
+
+            Populate();
+
+            class Projekt
+            {
+                constructor(czas, ocena)
+                {
+                    this.czas = czas;
+                    this.ocena = ocena;
+                    this.osoby = [];
+                }
+
+                dodajOsobe(osoba)
+                {
+                    this.osoby.push(osoba);
+                }
+
+                show()
+                {
+                    console.log(this.czas);
+                    console.log(this.ocena);
+                    console.log(this.osoby);
+                }
+            }
+
+            class osoba
+            {
+                constructor(imie, nazwisko)
+                {
+                    this.imie = imie;
+                    this.nazwisko = nazwisko;
+                }
+            }
+
+            let p = new Projekt(10, 5);
+            p.dodajOsobe(new osoba("Jan", "Kowalski"));
+            p.dodajOsobe(new osoba("Bogdan", "Kowalski"));
+            p.dodajOsobe(new osoba("Czaerk", "Kowalski"));
+            p.show();
+
+
+            li = [0,1,2,3,4,5,6,7,8,9];
+            console.log(li);
+            for (let i = 0; i < li.length; i++)
+            {
+                li.splice(i,1);
+            }
+            console.log(li);
+        </script>
+    </body>
+</html>
