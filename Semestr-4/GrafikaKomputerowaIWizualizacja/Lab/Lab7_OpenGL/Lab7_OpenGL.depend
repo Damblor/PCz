@@ -1,0 +1,39 @@
+# depslib dependency file v1.0
+1495524888 source:e:\strefa studenta\codeblock\krupa_piotr\lab7_opengl\biblioteka.cpp
+	<string.h>
+	<math.h>
+	"biblioteka.h"
+	<math.h>
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1495524938 e:\strefa studenta\codeblock\krupa_piotr\lab7_opengl\biblioteka.h
+	<GL/gl.h>
+	<GL/glu.h>
+	<GL/glut.h>
+	<sys/time.h>
+	<math.h>
+	<windows.h>
+	<stddef.h>
+
+1426349728 c:\program files\codeblocks\mingw\include\gl\glut.h
+	"freeglut_std.h"
+
+1426349728 c:\program files\codeblocks\mingw\include\gl\freeglut_std.h
+	<windows.h>
+	<EGL/egl.h>
+	<GLES/gl.h>
+	<GLES2/gl2.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1652779935 source:e:\strefa studenta\codeblock\krupa_piotr\lab7_opengl\main.cpp
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<stdlib.h>
+	"biblioteka.h"
+

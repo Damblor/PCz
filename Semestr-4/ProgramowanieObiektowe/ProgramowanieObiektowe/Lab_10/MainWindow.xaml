@@ -1,0 +1,35 @@
+﻿<Window x:Class="Lab_10.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab_10"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_Plik">
+                    <MenuItem Header="_Wyjscie" Click="MenuItemWyjscie_Click"/>
+                </MenuItem>
+
+                <MenuItem Header="_Samochody">
+                    <MenuItem Header="_Dodaj" Click="MenuItemSamochodyDodajNowy_Click"/>
+                    <MenuItem Header="_Usun" Click="MenuItemSamochodyUsun_Click"/>
+                    <Separator />
+                    <MenuItem Header="_Wyswietl wszystkie" Click="MenuItemSamochdyWyswietlWszystkie_Click"/>
+                </MenuItem>
+
+                <MenuItem Header="_Wlasciciele">
+                    <MenuItem Header="_Dodaj" Click="MenuItemWlascicieleDodajNowy_Click"/>
+                    <MenuItem Header="_Usun" Click="MenuItemWlascicieleUsun_Click"/>
+                    <Separator />
+                    <MenuItem Header="_Wyswietl wszystkich" Click="MenuItemWlascicieleWyswietlWszystkich_Click"/>
+                    <MenuItem Header="Wyswietl liczbe posiadanych samochodow" Click="MenuItemWlascicielePosiadanePojazdy_Click"/>
+                </MenuItem>
+            </Menu>
+
+            <DataGrid x:Name="dataGrid" Width="750" Height="367"/>
+        </DockPanel>
+    </Grid>
+</Window>
