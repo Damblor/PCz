@@ -1,0 +1,20 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model List<AS_k1.Models.Library>
+@{
+    <h1>Biblioteki</h1>
+    <table>
+        <tr>
+            <td>Nazwa</td>
+            <th></th>
+        </tr>
+        @foreach (var library in Model)
+        {
+            <tr>
+                <td>@library.Nazwa</td>
+            </tr>
+        }
+    </table>
+    <p><a asp-controller="Library" asp-action="AddOrUpdate">Dodaj biblioteke</a></p>
+}
