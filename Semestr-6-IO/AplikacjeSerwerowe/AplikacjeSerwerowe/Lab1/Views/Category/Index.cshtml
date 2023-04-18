@@ -1,0 +1,24 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model List<Lab1.Models.Category>
+@{
+    <h1>Kategorie:</h1>
+    <table>
+        @{
+            <tr>
+                <td>Nazwa</td>
+                <th></th>
+            </tr>
+            @foreach (var category in Model)
+            {
+                <tr>
+                    <td>@category.Name</td>
+                    <td><a asp-action="AddOrUpdate" asp-route-id=@category.Id>Edytuj</a></td>
+                    <td><a asp-action="Delete" asp-route-id=@category.Id>Usuń</a></td>
+                </tr>
+            }
+        }
+    </table>
+    <p><a asp-controller="Category" asp-action="AddOrUpdate">Dodaj Kategorie</a></p>
+}

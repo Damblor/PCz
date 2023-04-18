@@ -6,6 +6,6 @@
         public string Name { get; set; } = string.Empty;
 
         //Sql database foregin keys
-        public ICollection<Article> Articles { get; set; }
+        public virtual ICollection<Article> Articles { get; set; }
     }
 }

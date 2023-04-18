@@ -8,6 +8,6 @@
         public int Level { get; set; }
 
         //Sql database foregin keys
-        public ICollection<Team> Teams { get; set; }
+        public virtual ICollection<Team> Teams { get; set; }
     }
 }

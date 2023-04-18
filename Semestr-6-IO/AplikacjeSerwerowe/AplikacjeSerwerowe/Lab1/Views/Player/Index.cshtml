@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model List<Lab1.Models.Player>
+@{
+    <h1>Gracze:</h1>
+    <table>
+        @{
+            <tr>
+                <td>Imię</td>
+                <td>Nazwisko</td>
+                <td>Kraj</td>
+                <td>Data Urodzenia</td>
+                <th></th>
+            </tr>
+            @foreach (var player in Model)
+            {
+                <tr>
+                    <td>@player.FirstName</td>
+                    <td>@player.LastName</td>
+                    <td>@player.Country</td>
+                    <td>@player.BirthDate</td>
+                    <td><a asp-action="AddOrUpdate" asp-route-id="@player.Id">Edytuj</a></td>
+                    <td><a asp-action="Delete" asp-route-id="@player.Id">Usun</a></td>
+                </tr>
+            }
+        }
+    </table>
+    <p><a asp-controller="Player" asp-action="AddOrUpdate">Dodaj gracza</a></p>
+}

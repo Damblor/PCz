@@ -6,6 +6,6 @@
         public string Name { get; set; } = string.Empty;
 
         //Sql database foregin keys
-        public ICollection<MatchEvent> MatchEvents { get; set; }
+        public virtual ICollection<MatchEvent> MatchEvents { get; set; }
     }
 }
