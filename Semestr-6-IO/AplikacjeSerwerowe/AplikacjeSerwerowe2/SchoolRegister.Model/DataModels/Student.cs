@@ -7,39 +7,24 @@ using System.Threading.Tasks;
 
 namespace SchoolRegister.Model.DataModels
 {
-    public class Student
+    public class Student : User
     {
         public Student() { }
-        public Group Group { get; set; }
+        public virtual Group Group { get; set; }
         public int? GroupId { get; set; }
         public virtual IList<Grade> Grades { get; set; }
         public virtual Parent Parent { get; set; }
         public int? ParentId { get; set; }
         [NotMapped]
-        public double AverageGrade
-        {
-            get
-            {
-                return Grades.Select(x => (double)x.GradeValue).Average();
-            }
-        }
+        public double AverageGrade =>
+            Grades.Any() ? Grades.Average(x => (double)x.GradeValue) : 0;
         [NotMapped]
-        public IDictionary<string, double> AverageGradePerSubject
-        {
-            get
-            {
-                return Grades.GroupBy(x => x.Subject.Name)
-                    .ToDictionary(x => x.Key, x => x.Select(y => (double)y.GradeValue).Average());
-            }
-        }
+        public IDictionary<string, double> AverageGradePerSubject =>
+            Grades.GroupBy(x => x.Subject.Name)
+                .ToDictionary(x => x.Key, x => x.Average(y => (double)y.GradeValue));
         [NotMapped]
-        public IDictionary<string,List<GradeScale>> GradesPerSubject
-        {
-            get
-            {
-                return Grades.GroupBy(x => x.Subject.Name)
-                    .ToDictionary(x => x.Key, x => x.Select(y => y.GradeValue).ToList());
-            }
-        }
+        public IDictionary<string,List<GradeScale>> GradesPerSubject => 
+            Grades.GroupBy(x => x.Subject.Name)
+                .ToDictionary(x => x.Key, x => x.Select(y => y.GradeValue).ToList());
     }
 }
