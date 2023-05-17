@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolRegister.Web", "SchoolRegister.Web\SchoolRegister.Web.csproj", "{287FF43C-E3BA-4732-B90F-B9F380FE870F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolRegister.Web", "SchoolRegister.Web\SchoolRegister.Web.csproj", "{287FF43C-E3BA-4732-B90F-B9F380FE870F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolRegister.Model", "SchoolRegister.Model\SchoolRegister.Model.csproj", "{2B32117A-009C-43A8-98C6-A0DDB9F607FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolRegister.Model", "SchoolRegister.Model\SchoolRegister.Model.csproj", "{2B32117A-009C-43A8-98C6-A0DDB9F607FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolRegister.DAL", "SchoolRegister.DAL\SchoolRegister.DAL.csproj", "{738AF70A-1ABA-42DA-8DC6-4F99E8B4D5D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolRegister.DAL", "SchoolRegister.DAL\SchoolRegister.DAL.csproj", "{738AF70A-1ABA-42DA-8DC6-4F99E8B4D5D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolRegister.Services", "SchoolRegister.Services\SchoolRegister.Services.csproj", "{1593B478-664F-43F1-8BA7-22438125AD20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolRegister.Services", "SchoolRegister.Services\SchoolRegister.Services.csproj", "{1593B478-664F-43F1-8BA7-22438125AD20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolRegister.ViewModels", "SchoolRegister.ViewModels\SchoolRegister.ViewModels.csproj", "{B0E85CDF-015C-40DE-A825-6331CD0168F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolRegister.ViewModels", "SchoolRegister.ViewModels\SchoolRegister.ViewModels.csproj", "{B0E85CDF-015C-40DE-A825-6331CD0168F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolRegister.Tests", "SchoolRegister.Tests\SchoolRegister.Tests.csproj", "{9FFF3EA0-3853-466A-A753-E4762C4CE05A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{B0E85CDF-015C-40DE-A825-6331CD0168F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0E85CDF-015C-40DE-A825-6331CD0168F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0E85CDF-015C-40DE-A825-6331CD0168F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FFF3EA0-3853-466A-A753-E4762C4CE05A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FFF3EA0-3853-466A-A753-E4762C4CE05A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FFF3EA0-3853-466A-A753-E4762C4CE05A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FFF3EA0-3853-466A-A753-E4762C4CE05A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

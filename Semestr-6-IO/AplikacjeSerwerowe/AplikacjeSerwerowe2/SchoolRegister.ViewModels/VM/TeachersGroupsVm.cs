@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolRegister.Model.DataModels
+namespace SchoolRegister.ViewModels.VM
 {
-    public enum GradeScale
+    public class TeachersGroupsVm
     {
-        NDST = 2,
-        DST = 3,
-        DB = 4,
-        BDB = 5
     }
 }

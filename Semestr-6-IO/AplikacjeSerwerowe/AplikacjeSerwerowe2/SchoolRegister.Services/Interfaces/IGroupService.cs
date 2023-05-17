@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolRegister.Model.DataModels
+namespace SchoolRegister.Services.Interfaces
 {
-    public enum GradeScale
+    public interface IGroupService
     {
-        NDST = 2,
-        DST = 3,
-        DB = 4,
-        BDB = 5
     }
 }
