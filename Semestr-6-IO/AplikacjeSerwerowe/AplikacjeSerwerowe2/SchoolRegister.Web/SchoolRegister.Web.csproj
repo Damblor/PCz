@@ -18,6 +18,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +26,10 @@
     <ProjectReference Include="..\SchoolRegister.Model\SchoolRegister.Model.csproj" />
     <ProjectReference Include="..\SchoolRegister.Services\SchoolRegister.Services.csproj" />
     <ProjectReference Include="..\SchoolRegister.ViewModels\SchoolRegister.ViewModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Identity\Data\" />
   </ItemGroup>
 
 </Project>

@@ -36,7 +36,6 @@ namespace SchoolRegister.Tests
             services.AddTransient<IStudentService, StudentService>();
             services.AddTransient<ITeacherService, TeacherService>();
             services.SeedData();
-
         }
     }
 }

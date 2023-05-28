@@ -155,7 +155,7 @@ namespace SchoolRegister.Web.Migrations
 
                     b.HasIndex("SubjectId");
 
-                    b.ToTable("Grades", (string)null);
+                    b.ToTable("Grades");
                 });
 
             modelBuilder.Entity("SchoolRegister.Model.DataModels.Group", b =>
@@ -172,7 +172,7 @@ namespace SchoolRegister.Web.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Groups", (string)null);
+                    b.ToTable("Groups");
                 });
 
             modelBuilder.Entity("SchoolRegister.Model.DataModels.Role", b =>
@@ -231,7 +231,7 @@ namespace SchoolRegister.Web.Migrations
 
                     b.HasIndex("TeacherId");
 
-                    b.ToTable("Subjects", (string)null);
+                    b.ToTable("Subjects");
                 });
 
             modelBuilder.Entity("SchoolRegister.Model.DataModels.SubjectGroup", b =>
@@ -254,7 +254,7 @@ namespace SchoolRegister.Web.Migrations
 
                     b.HasIndex("SubjectId");
 
-                    b.ToTable("SubjectGroups", (string)null);
+                    b.ToTable("SubjectGroups");
                 });
 
             modelBuilder.Entity("SchoolRegister.Model.DataModels.User", b =>

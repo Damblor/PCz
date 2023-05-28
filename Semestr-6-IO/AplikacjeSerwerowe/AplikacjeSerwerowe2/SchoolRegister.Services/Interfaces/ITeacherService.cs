@@ -6,8 +6,10 @@ namespace SchoolRegister.Services.Interfaces
 {
     public interface ITeacherService
     {
-        TeacherVm GetTeacher(Expression<Func<Teacher, bool>> filterPredicate);
+
+        Task<bool> SendEmailToParentAsync(SendEmailToParentVm sendEmailToParentVm);
         IEnumerable<TeacherVm> GetTeachers(Expression<Func<Teacher, bool>> filterPredicate = null);
-        IEnumerable<GroupVm> GetTeachersGroups(TeachersGroupsVm getTeachersGroupsVm);
+        TeacherVm GetTeacher(Expression<Func<Teacher, bool>> filterPredicate);
+        IEnumerable<GroupVm> GetTeachersGroups(TeachersGroupsVm getTeachersGroups);
     }
 }

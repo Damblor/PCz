@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SchoolRegister.DAL.EF;
+using SchoolRegister.Services.Interfaces;
 using SchoolRegister.ViewModels.VM;
 using System;
 using System.Collections.Generic;
