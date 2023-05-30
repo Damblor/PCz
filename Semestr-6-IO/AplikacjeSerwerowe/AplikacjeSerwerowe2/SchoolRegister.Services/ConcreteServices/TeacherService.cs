@@ -17,21 +17,21 @@ namespace SchoolRegister.Services.ConcreteServices
 {
     public class TeacherService : BaseService, ITeacherService
     {
-        private readonly IEmailSenderService _emailService;
+        /*private readonly IEmailSenderService _emailService;*/
         private readonly UserManager<User> _userManager;
 
         public TeacherService(ApplicationDbContext dbContext,
                                 IMapper mapper,
                                 ILogger logger,
-                                UserManager<User> userManager,
-                                IEmailSenderService emailService)
+                                UserManager<User> userManager/*,
+                                IEmailSenderService emailService*/)
         : base(dbContext, mapper, logger)
         {
             _userManager = userManager;
-            _emailService = emailService;
+            /*_emailService = emailService;*/
         }
 
-        public async Task<bool> SendEmailToParentAsync(SendEmailToParentVm sendEmailToParentVm)
+        /*public async Task<bool> SendEmailToParentAsync(SendEmailToParentVm sendEmailToParentVm)
         {
             try
             {
@@ -59,7 +59,7 @@ namespace SchoolRegister.Services.ConcreteServices
             {
                 return false;
             }
-        }
+        }*/
 
         public IEnumerable<TeacherVm> GetTeachers(Expression<Func<Teacher, bool>> filterPredicate = null)
         {

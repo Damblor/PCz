@@ -31,8 +31,8 @@ namespace SchoolRegister.Web
 
             builder.Services.AddTransient(typeof(ILogger), typeof(Logger<Program>));
 
-            builder.Services.AddTransient<IEmailSenderService, EmailSenderService>();
-            builder.Services.AddTransient<SmtpClient, SmtpClient>();
+            /*builder.Services.AddTransient<IEmailSenderService, EmailSenderService>();
+            builder.Services.AddTransient<SmtpClient, SmtpClient>();*/
 
             builder.Services.AddScoped<ISubjectService, SubjectService>();
             builder.Services.AddScoped<IGradeService, GradeService>();
