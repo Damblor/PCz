@@ -1,0 +1,29 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model ViewModels.ViewModels.AddOrUpdateZwierzeVM
+@{
+    <h1>@ViewBag.Header</h1>
+    <form asp-route="AddOrUpdate" method="post">
+        <input asp-for="Id" hidden />
+        <p>
+            <label asp-for="Rasa">Rasa</label>
+            <input asp-for="Rasa"/>
+        </p>
+        <p>
+            <label asp-for="Gatunek">Gatunek</label>
+            <input asp-for="Gatunek" />
+        </p>
+        <p>
+            <label asp-for="Imie">Imie</label>
+            <input asp-for="Imie" />
+        </p>
+        <p>
+            <label asp-for="DataUrodzenia">DataUrodzenia</label>
+            <input asp-for="DataUrodzenia" />
+        </p>
+        <p>
+            <button type="submit">@ViewBag.Button</button>
+        </p>
+    </form>
+}
