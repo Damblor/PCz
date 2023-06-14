@@ -1,0 +1,15 @@
+﻿.navbar-nav {
+    background-color: forestgreen;
+}
+.flex-grow-1{
+    display: block;
+}
+.nav-item{
+    background-color: lightgreen;
+}
+.nav-link{
+    text-decoration: none;
+}
+.text-dark{
+    color: darkgray;
+}

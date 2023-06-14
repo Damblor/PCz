@@ -1,0 +1,27 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model AS_k1.Models.Library
+@{
+    <h1>@ViewBag.Header</h1>
+    <form asp-route="AddOrUpdate" method="post">
+        <input type="hidden" asp-for="Id">
+        <p>
+            <label asp-for="Nazwa">Nazwa</label>
+            <input asp-for="Nazwa">
+        </p>
+        <p>
+            <label asp-for="Books">Books:</label>
+            @foreach (SelectListItem item in ViewBag.bookList)
+            {
+                <p>
+                    <label>@item.Text</label>
+                <input type="checkbox" name="bookId" value="@item.Value">
+                </p>
+            }
+        </p>
+        <p>
+            <button type="submit">@ViewBag.ButtonText</button>
+        </p>
+    </form>
+}

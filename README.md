@@ -41,6 +41,6 @@ If I find other files I will add them here.
 ### Semestr 6 (zakres IO)
 
 > [Aplikacje Serwerowe](./Semestr-6-IO/AplikacjeSerwerowe)\
+> [Modelowanie i Symulacje Inżynierskie](./Semestr-6-IO/ModelowanieISymulacjeInzynierskie)\
 > [Projektowanie Systemów Informatycznych](./Semestr-6-IO/ProjektowanieSystemowInformatycznych)\
-> [Środowisko Programisty](./Semestr-6-IO/SrodowiskoProgramisty)\
-> [Zaawansowane Programowanie Obiektowe](./Semestr-6-IO/ZaawansowaneProgramowanieObiektowe)
+> [Środowisko Programisty](./Semestr-6-IO/SrodowiskoProgramisty)

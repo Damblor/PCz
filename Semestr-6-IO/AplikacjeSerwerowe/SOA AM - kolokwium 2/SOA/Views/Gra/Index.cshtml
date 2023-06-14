@@ -1,0 +1,23 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<ViewModels.ViewModels.GraVM>
+@{
+    <table>
+        <tr>
+            <td>Tytuł</td>
+            <td>Wydawnictwo</td>
+            <th></th>
+        </tr>
+        @foreach(var gra in Model)
+        {
+            <tr>
+                <td>@gra.Tytul</td>
+                <td>@gra.Wydawnictwo</td>
+                <td><a asp-action="AddOrUpdate" asp-route-id="@gra.Id">Edytuj</a></td>
+                <td><a asp-action="Delete" asp-route-id="@gra.Id">Usuń</a></td>
+            </tr>
+        }
+    </table>
+    <a asp-action="AddOrUpdate" asp-route-id="0">Dodaj Grę</a>
+}
