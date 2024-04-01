@@ -34,7 +34,7 @@ If I find other files I will add them here.
 
 > [Programowanie w Javie](./Semestr-5-IO/ProgramowanieWJavie)\
 > [Systemy oraz Algorytmy Równoległe](./Semestr-5-IO/SystemyOrazAlgorytmyRownolegle)\
-> [Systemy Wbudowane](https://github.com/Damblor/stm-gameboy)\
+> [Systemy Wbudowane](https://github.com/Damblor/stm-space-invaders)\
 > [Sztuczna Inteligencja](./Semestr-5-IO/SztucznaInteligencja)
 > [Tworzenie Aplikacji Internetowych](./Semestr-5-IO/TworzenieAplikacjiInternetowych)
 
