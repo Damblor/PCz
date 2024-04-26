@@ -44,3 +44,10 @@ If I find other files I will add them here.
 > [Modelowanie i Symulacje Inżynierskie](./Semestr-6-IO/ModelowanieISymulacjeInzynierskie)\
 > [Projektowanie Systemów Informatycznych](./Semestr-6-IO/ProjektowanieSystemowInformatycznych)\
 > [Środowisko Programisty](./Semestr-6-IO/SrodowiskoProgramisty)
+
+### Semestr 7 (zakres IO)
+
+> [Programowanie Aplikacji Mobilnych](./Semestr-7-IO/ProgramowanieAplikacjiMobilnych)\
+> [Programowanie Systemów Wbudowanych](./Semestr-7-IO/ProgramowanieSystemowWbudowanych)\
+> [Testowanie Oprogramowania](./Semestr-7-IO/TestowanieOprogramowania)\
+> [Zaawansowana Sztuczna Inteligencja](./Semestr-7-IO/ZSI)

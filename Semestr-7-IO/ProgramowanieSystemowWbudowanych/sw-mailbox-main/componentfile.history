@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<History> 
+  <File usedCount="2" path="coos/kernel/coocox.h"/>  
+  <File usedCount="2" path="coos/kernel/coos.h"/>  
+  <File usedCount="2" path="coos/kernel/core.c"/>  
+  <File usedCount="2" path="coos/kernel/event.c"/>  
+  <File usedCount="2" path="coos/kernel/flag.c"/>  
+  <File usedCount="2" path="coos/kernel/hook.c"/>  
+  <File usedCount="2" path="coos/kernel/kernelheap.c"/>  
+  <File usedCount="2" path="coos/kernel/mbox.c"/>  
+  <File usedCount="2" path="coos/kernel/mm.c"/>  
+  <File usedCount="2" path="coos/kernel/mutex.c"/>  
+  <File usedCount="2" path="coos/kernel/osconfig.h"/>  
+  <File usedCount="2" path="coos/kernel/oscore.h"/>  
+  <File usedCount="2" path="coos/kernel/oserror.h"/>  
+  <File usedCount="2" path="coos/kernel/osevent.h"/>  
+  <File usedCount="2" path="coos/kernel/osflag.h"/>  
+  <File usedCount="2" path="coos/kernel/oskernelheap.h"/>  
+  <File usedCount="2" path="coos/kernel/osmm.h"/>  
+  <File usedCount="2" path="coos/kernel/osmutex.h"/>  
+  <File usedCount="2" path="coos/kernel/osqueue.h"/>  
+  <File usedCount="2" path="coos/kernel/osservicereq.h"/>  
+  <File usedCount="2" path="coos/kernel/ostask.h"/>  
+  <File usedCount="2" path="coos/kernel/ostime.h"/>  
+  <File usedCount="2" path="coos/kernel/ostimer.h"/>  
+  <File usedCount="2" path="coos/kernel/queue.c"/>  
+  <File usedCount="2" path="coos/kernel/sem.c"/>  
+  <File usedCount="2" path="coos/kernel/servicereq.c"/>  
+  <File usedCount="2" path="coos/kernel/task.c"/>  
+  <File usedCount="2" path="coos/kernel/time.c"/>  
+  <File usedCount="2" path="coos/kernel/timer.c"/>  
+  <File usedCount="2" path="coos/kernel/utility.c"/>  
+  <File usedCount="2" path="coos/kernel/utility.h"/>  
+  <File usedCount="2" path="coos/portable/arch.c"/>  
+  <File usedCount="2" path="coos/portable/gcc/port.c"/>  
+  <File usedCount="2" path="coos/portable/osarch.h"/> 
+</History>
